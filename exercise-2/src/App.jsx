@@ -1,20 +1,37 @@
 import React from "react";
+import { useState } from "react";
 function App() {
-  /* You will need to use a boolean state to keep the value of the text entered */
+  // const [isPress, setPress] = useState(false);
+  const [text, setText] = useState("");
 
-  /* You will need a function to handle a key pressed on the first input and update the state*/
+  const handleInput = (e) => {
+    e.preventDefault();
+    setText(e.target.value);
+  };
+  const handleText = (e) => {
+    e.preventDefault();
+    setText(e.target.value.toUpperCase());
+  };
   return (
     <main>
       <h1>Upper Case Converter</h1>
 
       <label>Enter any text !</label>
-      <input />
+      <input 
+       type="text"
+       name="text"
+       id="text"
+       value={text}
+       onChange={handleInput}
 
+      />
       <p>
         <label>Here is the text in upper case</label>
 
-        {/* This input will need to display the text entered in lower case */}
-        <input disabled />
+       <input
+        onChange={handleInput}
+        onMouseEnter={handleText}
+       disabled />
       </p>
     </main>
   );
