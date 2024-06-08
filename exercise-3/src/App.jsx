@@ -1,7 +1,8 @@
 import React from "react";
 
 function App() {
-  /* You will need to use many state to keep the inut values and other needs */
+  const [isFirstNo, setFirstNo] = useState('');
+  const [isSecondNo, setSecondNo] = useState('');
 
   /* You will need some function to handle the key pressed and button events */
 
